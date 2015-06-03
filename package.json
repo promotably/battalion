@@ -1,0 +1,29 @@
+{
+  "name": "battalion",
+  "version": "0.0.0",
+  "description": "AWS Deployment Manager",
+  "bin": {
+    "delete-old-rds-snaps": "bin/delete-old-rds-snaps.js",
+    "delete-old-ec2-ami": "bin/delete-old-ec2-ami.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:promotably/battalion"
+  },
+  "keywords": [
+    "aws"
+  ],
+  "author": "Vincent Rivellino",
+  "license": "GPLv2",
+  "bugs": {
+    "url": "https://github.com/promotably/battalion/issues"
+  },
+  "dependencies": {
+    "aws-sdk": "~2.1.32",
+    "wait.for": "~0.6.6",
+    "yargs": "~3.10.0"
+  }
+}

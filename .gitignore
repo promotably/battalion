@@ -1,0 +1,11 @@
+# npm modules
+node_modules
+
+# bower packages
+public/packages/
+
+# mac stuff
+.DS_Store
+
+# Logs
+npm-debug.log

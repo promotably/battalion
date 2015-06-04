@@ -124,7 +124,6 @@ function getMyAmis(callback) {
   describeImages([], callback);
 }
 
-
 function processEc2Amis(forceDelete, maxage, dryRun) {
 
   var activeAmis = wait.for(getActiveAmis);
@@ -166,8 +165,12 @@ function processEc2Amis(forceDelete, maxage, dryRun) {
     }
 
     if (deleteAmi) {
-      //deleteRdsSnapshot(snapshot.DBSnapshotIdentifier, dryRun);
-      console.log('Delete AMI ' + ami.ImageId + dryRun);
+      if (dryRun) {
+        console.log('Would delete AMI ' + ami.ImageId + dryRun);
+      } else {
+        wait.forMethod(ec2, 'deregisterImage', {ImageId: ami.ImageId});
+        console.log('Deregister AMI ' + ami.ImageId + dryRun);
+      }
     }
   }
 }
